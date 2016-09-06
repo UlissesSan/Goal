@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>CircleMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Goal.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GoalTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GoalUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>27533A6098E2BDD80827924FA8F4E742</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>77D8FE9D683C1C1EB31C73D3814F3A0C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B77126B435F23EAD7CB23EC11BEC493B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D32D693235EC73084DC3C483073C8047</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
