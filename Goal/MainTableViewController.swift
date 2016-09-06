@@ -11,7 +11,7 @@ import CoreData
 
 class MainTableViewController: UITableViewController {
 
-  var listProjects: [NSManagedObject]()
+  var listProjects: [NSManagedObject] = []
   
   
     override func viewDidLoad() {
@@ -28,22 +28,57 @@ class MainTableViewController: UITableViewController {
       
     }
   
+    //saving
     func addProject(){
       let alertController = UIAlertController(title: "Projec created", message: "Project added", preferredStyle: UIAlertControllerStyle.Alert)
       
       let confirmAction = UIAlertAction(title: "Confirm!", style: UIAlertActionStyle.Default, handler: ({
-        ()in
+        (_)in
         
-        
-        
+          if let field = alertController.textFields![0] as? UITextField {
+          
+            self.saveProject(field.text!)
+            self.tableView.reloadData()
+          
+          }
         
         
         }
       ))
+      
+      let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+      
+      alertController.addTextFieldWithConfigurationHandler({
+        (textField) in
+        
+        textField.placeholder = "Testing this shit"
+        
+      })
+      
+      alertController.addAction(confirmAction)
+      alertController.addAction(cancelAction)
+      
+      self.presentViewController(alertController, animated: true, completion: nil)
+      
     }
   
     func saveProject(projectToSave : String){
-    
+      let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate
+      
+      let managedContext = appDelegate.managedObjectContext
+      
+      let projectEntity = NSEntityDescription.entityForName("listProjects", inManagedObjectContext: managedContext)
+      
+      let project = NSManagedObject(entity: projectEntity!, insertIntoManagedObjectContext: managedContext)
+      
+      do {
+        try managedContext.save()
+        
+        listProjects.append(project)
+      }
+      catch{
+          print("error 1")
+      }
     
     
     }
