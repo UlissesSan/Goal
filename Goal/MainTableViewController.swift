@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class MainTableViewController: UITableViewController {
 
+  var listProjects: [NSManagedObject]()
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +22,30 @@ class MainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+      
+      
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: Selector("addProject"))
+      
+    }
+  
+    func addProject(){
+      let alertController = UIAlertController(title: "Projec created", message: "Project added", preferredStyle: UIAlertControllerStyle.Alert)
+      
+      let confirmAction = UIAlertAction(title: "Confirm!", style: UIAlertActionStyle.Default, handler: ({
+        ()in
+        
+        
+        
+        
+        
+        }
+      ))
+    }
+  
+    func saveProject(projectToSave : String){
+    
+    
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +54,7 @@ class MainTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+  
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -34,18 +62,18 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return listProjects.count
     }
 
-    /*
+  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
-        // Configure the cell...
+      
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
